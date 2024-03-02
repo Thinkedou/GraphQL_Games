@@ -10,8 +10,15 @@ export const typeDefs = `#graphql
         rating:Int!
         content:String!
     }
+    type Author {
+        id:ID!
+        name:String!
+        verify:Boolean!
+    }
     type Query {
+        reviews:[Review]
         games:[Game]
+        authors:[Author]
     }
 
 `
