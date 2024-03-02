@@ -13,6 +13,10 @@ const resolvers = {
         },
         authors(){
             return dummy_db.authors
+        },
+        review(parent,args,context){
+            console.log({args})
+            return dummy_db.reviews.find(({id})=>id===args.id)
         }
     }
 }
