@@ -41,6 +41,12 @@ const resolvers = {
         reviews(parent) {
             return dummy_db.reviews.filter((r) => r.author_id === parent.id)
         }
+    },
+    Mutation:{
+        deleteGame(parent,args){
+            dummy_db.reviews = dummy_db.reviews.filter(({id})=> args.id!=id)
+            return dummy_db.reviews
+        }
     }
 }
 
