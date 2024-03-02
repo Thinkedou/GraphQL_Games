@@ -28,6 +28,19 @@ const resolvers = {
         reviews(parent){
             return dummy_db.reviews.filter(({game_id})=>game_id===parent.id)
         }
+    },
+    Review: {
+        author(parent) {
+          return dummy_db.authors.find((a) => a.id === parent.author_id)
+        },
+        game(parent) {
+          return dummy_db.games.find((g) => g.id === parent.game_id)
+        }
+      },
+    Author: {
+        reviews(parent) {
+            return dummy_db.reviews.filter((r) => r.author_id === parent.id)
+        }
     }
 }
 
