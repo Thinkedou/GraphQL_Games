@@ -44,11 +44,20 @@ const resolvers = {
     },
     Mutation:{
         deleteGame(parent,args){
-            dummy_db.reviews = dummy_db.reviews.filter(({id})=> args.id!=id)
-            return dummy_db.reviews
+                dummy_db.reviews = dummy_db.reviews.filter(({id})=> args.id!=id)
+                return dummy_db.reviews
+            },
+        addGame(parent,args){
+            const newGame={
+                ...args.game,
+                id: Math.floor(Math.random()*5000).toString()
+            }
+            dummy_db.games.push(newGame)
+            return newGame
+            }
         }
     }
-}
+
 
 
 const server = new ApolloServer({
