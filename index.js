@@ -8,15 +8,25 @@ const resolvers = {
         games(){
             return dummy_db.games
         },
+        game(parent,args,context){
+            return dummy_db.games.find(({id})=>id===args.id)
+        },
         reviews(){
             return dummy_db.reviews
+        },
+        review(parent,args,context){
+            return dummy_db.reviews.find(({id})=>id===args.id)
         },
         authors(){
             return dummy_db.authors
         },
-        review(parent,args,context){
-            console.log({args})
-            return dummy_db.reviews.find(({id})=>id===args.id)
+        author(parent,args,context){
+            return dummy_db.authors.find(({id})=>id===args.id)
+        }
+    },
+    Game:{
+        reviews(parent){
+            return dummy_db.reviews.filter(({game_id})=>game_id===parent.id)
         }
     }
 }
