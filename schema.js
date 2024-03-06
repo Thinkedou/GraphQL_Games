@@ -13,7 +13,6 @@ export const typeDefs = `#graphql
     type Query {
         games:[Game]
     }
-
 `
 
 // int
