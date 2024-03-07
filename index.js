@@ -7,6 +7,21 @@ const resolvers = {
     Query:{
         games(){
             return dummy_db.games
+        },
+        reviews(){
+            return dummy_db.reviews
+        },
+        authors(){
+            return dummy_db.authors
+        },
+        game(_,args){        
+            return dummy_db.games.find(({id})=>id===args.id)
+        },
+        author(_,args){        
+            return dummy_db.authors.find(({id})=>id===args.id)
+        },
+        review(_,args){        
+            return dummy_db.reviews.find(({id})=>id===args.id)
         }
     }
 }

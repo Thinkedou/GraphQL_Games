@@ -1,4 +1,4 @@
-const games = [
+let games = [
     {id: '1', title: 'Zelda, Tears of the Kingdom', platform: ['Switch']},
     {id: '2', title: 'Final Fantasy 7 Remake', platform: ['PS5', 'Xbox']},
     {id: '3', title: 'Elden Ring', platform: ['PS5', 'Xbox', 'PC']},
@@ -6,13 +6,13 @@ const games = [
     {id: '5', title: 'Pokemon Scarlet', platform: ['PS5', 'Xbox', 'PC']},
 ]
   
-const authors = [
+let authors = [
     {id: '1', name: 'mario', verified: true},
     {id: '2', name: 'yoshi', verified: false},
     {id: '3', name: 'peach', verified: true},
 ]
   
-const reviews = [
+let reviews = [
     {id: '1', rating: 9, content: 'Final Fantasy 7 Remake Review#1', author_id: '1', game_id: '2'},
     {id: '2', rating: 10, content: 'Zeldo review #1', author_id: '2', game_id: '1'},
     {id: '3', rating: 7, content: 'Elden Ring Review ✨', author_id: '3', game_id: '3'},
